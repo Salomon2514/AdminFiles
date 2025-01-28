@@ -1,0 +1,403 @@
+	//
+	var SEP_AND = new String('|&|');
+	var SEP_IGUAL = new String('|=|');
+	var DIR_FIX = new String('../../');
+	
+
+function ltrim(str){
+	return str.replace(/^(\s+)/g, '');
+}
+
+function rtrim(str){
+	return str.replace(/(\s+)$/g, '');
+}
+
+function trim(str){
+	return ltrim(rtrim(str));
+}
+function $(i){
+	return document.getElementById(i);
+}
+var Navegador = function(){
+	this.esIE = false;// Internet Explorer
+	this.esIE6 = false;
+	this.esIE7 = false;
+	this.esIE8 = false;
+	this.esFf = false;// Mozilla
+	this.esOp = false;// Opera
+	this.esNs = false;// Netscape
+	
+	if(window.navigator.userAgent.search(RegExp("MSIE","im"))!=-1){
+		this.esIE = true;
+		if(window.navigator.userAgent.search(RegExp("MSIE 8","im"))!=-1) this.esIE8 = true;
+		else if(window.navigator.userAgent.search(RegExp("MSIE 7","im"))!=-1) this.esIE7 = true;
+		else if(window.navigator.userAgent.search(RegExp("MSIE 6","im"))!=-1) this.esIE6 = true;
+	}
+	else if(window.navigator.userAgent.search(RegExp("Firefox","im"))!=-1) this.esFf = true;
+	else if(window.navigator.userAgent.search(RegExp("Opera","im"))!=-1) this.esOp = true;
+	else if(window.navigator.userAgent.search(RegExp("Safari","im"))!=-1) this.esSa = true;
+	else if(window.navigator.userAgent.search(RegExp("Netscape","im"))!=-1) this.esNs = true;
+};
+var Nav = new Navegador();
+Function.prototype.closure = function(obj){
+	// Init object storage.
+	if (!window.__objs){
+		window.__objs = [];
+		window.__funs = [];
+	}
+	
+	// For symmetry and clarity.
+	var fun = this;
+	
+	// Make sure the object has an id and is stored in the object store.
+	var objId = obj.__objId;
+	if (!objId) __objs[objId = obj.__objId = __objs.length] = obj;
+	
+	// Make sure the function has an id and is stored in the function store.
+	var funId = fun.__funId;
+	if (!funId) __funs[funId = fun.__funId = __funs.length] = fun;
+	
+	// Init closure storage.
+	if (!obj.__closures) obj.__closures = [];
+	
+	// See if we previously created a closure for this object/function pair.
+	var closure = obj.__closures[funId];
+	if (closure) return closure;
+	
+	// Clear references to keep them out of the closure scope.
+	obj = null;
+	fun = null;
+	
+	// Create the closure, store in cache and return result.
+	var o = __objs[objId].__closures[funId] = function (){
+		if(!!__funs[funId] && !!__objs[objId]) return __funs[funId].apply(__objs[objId], arguments);
+		else return false;
+	};
+	o.__funId = funId;
+	return o;
+	
+};
+
+var EliminarClosures = function(o){
+	var i = 0;
+	if(o){
+		if(o.__objId){
+			for(i in o.__closures){
+				delete(window.__funs[i]);
+				delete(o.__closures[i]);
+			}
+			delete(window.__objs[o.__objId]);
+			/*delete(o.__closures);
+			delete(o.__objId);*/
+			o.__closures = null;
+			o.__objId = null;
+		}
+	}
+	i = null;
+}
+
+var LimpiarClosures = function(){
+	if(!!Nav && !Nav.esIE) window.addEventListener('unload', LimpiarClosures, false);
+	else window.detachEvent("onunload",LimpiarClosures);
+	
+	if(window.__objs){
+		for(i in window.__objs) EliminarClosures(window.__objs[i]);
+	}
+	window.__objs = [];
+	window.__funs = [];
+};
+
+var Limpiar = function(){
+	if(!!Nav && !Nav.esIE) window.addEventListener('unload', LimpiarClosures, false);
+	else window.attachEvent("onunload", LimpiarClosures);
+}();
+
+document.LimpiarClosures  = LimpiarClosures;
+function AddEvent(o, e, f){
+	if(Nav.esIE) o.attachEvent('on'+e, f);
+	else o.addEventListener(e, f, ((Nav.esOp)? false : true));
+};
+function RemEvent(o, e, f){
+	if(Nav.esIE) o.detachEvent('on'+e, f);
+	else o.removeEventListener(e, f, ((Nav.esOp)? false : true));
+};
+function FireEvent(o, e){
+	var evt = null;
+	if(Nav.esIE) o.fireEvent('on'+e);
+	else{
+		if(e=='click' || e=='dblclick' || e=='mousedown' || e=='mousemove' || e=='mouseout' || e=='mouseover' || e=='mouseup'){
+			evt = document.createEvent("MouseEvents");
+			evt.initMouseEvent(e, true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+		}
+		else if(e=='keydown' || e == 'keypress' || e == 'keyup'){
+			evt = document.createEvent("KeyboardEvent");
+			evt.initKeyEvent(e, true, true, null, false, false, false, false, 9, 0);
+		}
+		else{
+			evt = document.createEvent("Event");
+			evt.initEvent(e, true, false);
+		}
+		o.dispatchEvent(evt);
+	}
+}
+function StopEvent(e){
+	if(Nav.esIE){
+		e.returnValue = false;
+		e.cancelBubble = true;
+	}
+	else{
+		e.preventDefault();
+		e.stopPropagation();
+	}
+}
+// JavaScript Document
+	Request = function(oListener, metodo){
+		this.pedido = new crearXHR();
+		this.reportar = true;
+		this.respuestaXML = null;
+		this.respuestaHTML = null;
+		this.archivo = null;
+		this.valores = null;
+		this.listener = oListener;
+		
+		if(!metodo) this.metodo = 'POST';
+		else this.metodo = metodo;
+	}
+	
+	Request.prototype.pedir = function(a, v, m){
+		//inicializamos
+		if(!!a) this.archivo = a;
+		if(!!v) this.valores = v;
+		if(!!m) this.metodo = m;
+		//
+		this.respuestaXML = null;
+		this.respuestaHTML = null;
+		//
+		this.cancelar(this.pedido);
+		//
+		this.pedido.onreadystatechange = this.procesar.closure(this);
+		//
+		this.pedido.open(this.metodo, this.archivo, true);
+		//
+		if(this.valores){
+			this.valores = this.valores.puntualChars();
+			this.pedido.send(this.valores);
+		}
+		else this.pedido.send();
+	}
+	
+	Request.prototype.procesar = function(){
+		var termino = false;
+		if(this.pedido && this.pedido.readyState == 4){
+			try{ this.pedido.status == 200; }catch(e){ return false; }
+			
+			if(this.pedido.status == 200){
+				if(this.pedido.responseXML) this.respuestaXML = this.pedido.responseXML.documentElement;
+				this.respuestaHTML = this.pedido.responseText;
+				
+				termino = true;
+			}
+			else if((this.pedido.status >= 12029 && this.pedido.status <= 12031)  || this.pedido.status == 12152 || this.pedido.status == 12159){
+				//cancelado por el servidor
+				this.pedir();
+			}
+			else if(this.reportar){
+				ERROR.reportar(" Error en clase Request.\nESTADO: "+this.pedido.status+" "+this.pedido.statusText+"\nARCHIVO: "+this.archivo+"\nMETODO: "+this.metodo);
+				termino = true;
+			}
+			
+			if(termino == true){
+				this.cancelar();
+				
+				if(this.listener && this.listener.onRequestLoad) this.listener.onRequestLoad();
+				else if(typeof(this.listener)=='function'){
+					this.listener();
+				}
+			}
+		}
+	}
+	
+	Request.prototype.cancelar = function(){
+		cancelarPedido(this.pedido);
+	}
+	
+	//
+	String.prototype.puntualChars = function(){
+		var chrs = new Array({'chr':'€', 'ent':'&euro;'}), i, str = this.toString();
+		for(i = 0; i < chrs.length; i++){
+			str = str.replace(chrs[i]['chr'], chrs[i]['ent']);
+		}
+		return str;
+	}
+	
+	String.prototype.unPuntualChars = function(){
+		var chrs = new Array({'chr':'€', 'ent':'&euro;'}), i, str = this.toString();
+		for(i = 0; i < chrs.length; i++){
+			str = str.replace(chrs[i]['ent'], chrs[i]['chr']);
+		}
+		return str;
+	}
+	
+	/* FUNCION DE CREACION DE XMLHttpRequest */
+	crearXHR = function(){
+		var r = null
+		if (window.XMLHttpRequest) r = new XMLHttpRequest()
+		else if(window.ActiveXObject) {
+			var msp = new Array('Msxml2.XMLHTTP.5.0', 'Msxml2.XMLHTTP.4.0', 'Msxml2.XMLHTTP.3.0', 'Msxml2.XMLHTTP', 'Microsoft.XMLHTTP')
+			for(var i = 0; i < msp.length; i++){
+				try { r = new ActiveXObject(msp[i]) } catch (e){}
+			}
+		}
+		return r
+	}
+	
+	/* FUNCION DE DETENCION DE XMLHttpRequest */
+	cancelarPedido = function(reqXHR){
+		if(reqXHR!=null){
+			reqXHR.onreadystatechange=new Function()//una funcion vacia...
+			reqXHR.abort()
+		}
+	}
+	
+	//
+	ReportarError = function(f, m){
+		this.archivo = (!!f)? f:DIR_FIX + 'xmlHttpRequest/reportarError.php';
+		this.metodo = (!!m)? m:'POST';
+		this.req = new Request();
+		this.req.reportar = false;
+		this.alerta = true;
+		
+		this.reportar = function(msj){
+			var msg = "Ha ocurrido un error.\nLos administradores del sistema ya han sido notificados del mismo."+
+			"\nSi el error continua pongase en contacto con los mismos.";
+			var b = false;
+			
+			this.req.pedir(this.archivo, msj, this.metodo);
+			if(this.alerta){
+				try{ if(Error && Loader) b = true; }catch(e){ b = false; }
+				
+				if(b){
+					Loader.showed = Blocker.showed = 1;
+					Loader.hide();
+					Blocker.hide();
+					
+					Error.message = msg;
+					Error.onAcept = function(){
+						Error.hide();
+						Blocker.hide();
+					};
+					Error.onCancel = function(){
+						Loader.hide();
+						Blocker.hide();
+					};
+					Blocker.show();
+					Error.show();
+				}
+				else{ alert(msg); }
+			}
+			return false;
+		};
+	}
+	ERROR = new ReportarError();
+
+	var DIR_ROOT = '/';
+	
+	var ER_STR = /^([^ \t\n\r]([ \t\n\r]|[^ \t\n\r])*[^ \t\n\r])+$|^[^ \t\n\r]$/ig;
+	var ER_ALFA_NUM = /^[a-z0-9][a-z0-9]+[a-z0-9]$/ig;
+	var ER_EMAIL = /^[a-z0-9_\.\-]+@[a-z0-9_\-]+(\.[a-z0-9_\-]{2,20})*\.[a-z]{2,4}$/ig;
+	
+	/////
+	var aSolActs = new Object;
+	function cambiarSolapa(id, pos, on, off, event){
+		if(!!aSolActs[id]){
+			aSolActs[id]['tit'].className = off;
+			aSolActs[id]['con'].style.display = 'none';
+		}
+		aSolActs[id] = new Object;
+		aSolActs[id]['tit'] = $('titSolDeCont'+id+'Pos'+pos);
+		aSolActs[id]['tit'].className = on;
+		aSolActs[id]['con'] = $('conSolDeCont'+id+'Pos'+pos);
+		aSolActs[id]['con'].style.display = 'block';
+		
+		if(event) StopEvent(event);
+	}
+	
+	///
+	var oReqSec = null;
+	function cambiarSeccion(event, sec, idi, file){
+		var v = '';
+		return true;//Desactivado
+		
+		StopEvent(event);
+		
+		if(!oReqSec){
+			oReqSec = new Request();
+			oReqSec.listener = ponerSeccion;
+		}
+		
+		if(!file){ file = 'secciones'; }
+		
+		v += 'sec' + SEP_IGUAL + sec + SEP_AND;
+		v += 'idi' + SEP_IGUAL + idi + SEP_AND;
+		
+		oReqSec.pedir(DIR_ROOT + 'requests/' + file + '.php', v);
+	}
+	function ponerSeccion(){
+		var d = oReqSec.respuestaXML, o = null, i = null;
+		if(!!d){
+			$('seccionTitCont').innerHTML = d.firstChild.data;
+			$('seccionSolCont').innerHTML = d.childNodes[1].data;
+			o = $('seccionDatCont');
+			o.innerHTML = d.lastChild.data;
+			ejecutarJavaScript(o);
+		}
+		else{ alert(oReqSec.respuestaHTML); }
+	}
+	
+	////
+	function ejecutarJavaScript(o){
+		var a = o.getElementsByTagName('script');
+		var i = 0;
+		for(i; i < a.length; i++){ eval(a[i]['text']); }
+	}
+	
+	function getElementPos(ele){
+		var p = ele.style.position;
+		ele.style.position = 'relative';
+		var x = ele.offsetLeft;
+		var y = ele.offsetTop;
+		ele.style.position = p;
+		while(ele.tagName.toLowerCase() != 'body'){
+			ele = ele.parentNode;
+			if(ele.style.position == 'absolute'){
+				x += ele.offsetLeft;
+				y += ele.offsetTop;
+			}
+		}
+		return {'x':x, 'y':y};
+	}
+	
+	function setOpacity(opa, ele){
+		if(!window.innerWidth){ ele.style.filter = 'alpha(opacity='+opa+')'; }
+		else{ ele.style.opacity = (opa / 100); }
+	}
+	
+	function strongEaseInOut(t,b,c,d){
+		if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
+		return c/2*((t-=2)*t*t*t*t + 2) + b;
+	}
+	
+	//
+	function WScreen(){ return (Nav.esIE)? document.documentElement.clientWidth : window.innerWidth; }
+	function HScreen(){ return (Nav.esIE)? document.documentElement.clientHeight : window.innerHeight; }
+	function YPos(){ return (Nav.esIE)? document.documentElement.scrollTop : window.pageYOffset; }
+	function XPos(){ return (Nav.esIE)? document.documentElement.scrollLeft : window.pageXOffset; }
+	function HBody(){ return document.documentElement.scrollHeight; }
+	function WBody(){ return document.documentElement.scrollWidth; }
+	
+	//
+	function writeInElement(elem, tld, name, acc, inner){
+		elem['href'] = 'mailto:' + acc + '@' + name + '.' + tld;
+		if(inner){ elem['innerHTML'] = acc + '@' + name + '.' + tld; }
+	}
+	

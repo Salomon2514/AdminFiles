@@ -1,0 +1,1468 @@
+/*===============
+
+File Name: Beth - Mobile-First Responsive Menu;
+Version: 1.0;
+Author: Tiberiu Alexander;
+Author URL: http://codecanyon.net/user/tiberiualexander/portfolio ;
+E-mail: tiberiu.alexander@gmail.com ;
+Created: 10/02/2013;
+
+=================*/
+
+/* Some stylesheet reset */
+#nav, #nav ul {
+	list-style: none;
+	padding: 0;
+	
+	margin:0 auto;
+	width:100%;
+	
+	
+}
+
+#nav #toggleMenu, #nav #hideMenu {
+	display: none;
+	
+
+}
+
+/* The main navigation bar */
+#nav {
+	position: relative;
+	display: block;
+	height: 58px;
+	width: auto; /* The menu will take the width of its container */
+	/*border-radius: 5px;*/
+	background: #33F;
+	padding:-50%;
+	z-index: 50;
+	padding-left:25%;
+	padding-right:25%;
+
+}
+
+#nav>li {
+	display: block;
+	float: left;
+		position: relative;
+}
+
+/* The main navigation links */
+#nav>li>a {
+	/* Layout */
+	display: block;
+	padding: 13px 22px;
+	border-color: #b8d9ea;
+
+	/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	color: #b8d9ea;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:2.5;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+}
+
+/* The hover state of the links */
+#nav>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The arrow indicating a dropdown menu */
+.dropdown>a::after {
+	position: absolute;
+	display: block;
+	content: "";
+	height: 0;
+	width: 0;
+	border: 4px solid transparent;
+	border-top-color: inherit;
+	right: 11px;
+	top: 27px;
+}
+
+/*  The submenus */
+#nav ul {
+	display: block;
+	position: absolute;
+	top: 58px;
+	left: -9999px;
+	opacity: 0;
+	background: #429bc7;
+	cursor: pointer;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	-webkit-transition: opacity .22s ease-in;
+	-ms-transition: opacity .22s ease-in;
+	-moz-transition: opacity .22s ease-in;
+	-o-transition: opacity .22s ease-in;
+	transition: opacity .22s ease-in;
+}
+
+#nav ul li {
+	display: block;
+	position: absolute;
+	height: 0px;
+	-webkit-transition: height .15s ease-in;
+	-ms-transition: height .15s ease-in;
+	-moz-transition: height .15s ease-in;
+	-o-transition: height .15s ease-in;
+	transition: height .15s ease-in;
+}
+#nav ul>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The submenu appears when its parent is hovered */
+#nav>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+#nav ul>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav ul li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+/* The submenu links */
+#nav ul li a {
+	/* Layout */
+	display: block;
+	padding: 7px 12px 7px 22px;
+	width: 200px;
+
+	/* Typography */
+	font-family: "Open Sans", sans-serif;
+	font-size: 13px;
+	
+	
+	text-decoration: none;
+	color: #039;
+	font-weight: 400;
+	
+	
+	/* Background & effects */
+	background: #FFF;
+	-webkit-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-ms-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-moz-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-o-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	transition: color .2s ease-in, border-left-color .2s ease-in;;
+}
+
+/* Rounded corners for the last submenu link */
+#nav ul>li:last-child>a {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+/* Changing the link color on hover */
+#nav ul li:hover>a {
+	color: #039;
+	background: #BFD6FF;
+}
+
+.nav ul ul {
+	display: none;
+}
+
+/* Styling for mobile devices */
+@media screen and (max-width: 1920px) {
+	#nav, #nav ul {
+	list-style: none;
+	padding: 0;
+	
+	margin:0 auto;
+	width:100%;
+	
+	
+}
+
+#nav #toggleMenu, #nav #hideMenu {
+	display: none;
+	
+
+}
+
+/* The main navigation bar */
+#nav {
+	position: relative;
+	display: block;
+	height: 58px;
+	width: auto; /* The menu will take the width of its container */
+	/*border-radius: 5px;*/
+	background: #33F;
+	padding:-50%;
+	z-index: 50;
+	padding-left:20%;
+	padding-right:20%;
+
+}
+
+#nav>li {
+	display: block;
+	float: left;
+		position: relative;
+}
+
+/* The main navigation links */
+#nav>li>a {
+	/* Layout */
+	display: block;
+	padding: 13px 22px;
+	border-color: #b8d9ea;
+
+	/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	color: #b8d9ea;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:2.5;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+}
+
+/* The hover state of the links */
+#nav>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The arrow indicating a dropdown menu */
+.dropdown>a::after {
+	position: absolute;
+	display: block;
+	content: "";
+	height: 0;
+	width: 0;
+	border: 4px solid transparent;
+	border-top-color: inherit;
+	right: 11px;
+	top: 27px;
+}
+
+/*  The submenus */
+#nav ul {
+	display: block;
+	position: absolute;
+	top: 58px;
+	left: -9999px;
+	opacity: 0;
+	background: #429bc7;
+	cursor: pointer;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	-webkit-transition: opacity .22s ease-in;
+	-ms-transition: opacity .22s ease-in;
+	-moz-transition: opacity .22s ease-in;
+	-o-transition: opacity .22s ease-in;
+	transition: opacity .22s ease-in;
+}
+
+#nav ul li {
+	display: block;
+	position: absolute;
+	height: 0px;
+	-webkit-transition: height .15s ease-in;
+	-ms-transition: height .15s ease-in;
+	-moz-transition: height .15s ease-in;
+	-o-transition: height .15s ease-in;
+	transition: height .15s ease-in;
+}
+#nav ul>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The submenu appears when its parent is hovered */
+#nav>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+#nav ul>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav ul li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+/* The submenu links */
+#nav ul li a {
+	/* Layout */
+	display: block;
+	padding: 7px 12px 7px 22px;
+	width: 200px;
+
+	/* Typography */
+	font-family: "Open Sans", sans-serif;
+	font-size: 13px;
+	
+	
+	text-decoration: none;
+	color: #039;
+	font-weight: 400;
+	
+	
+	/* Background & effects */
+	background: #FFF;
+	-webkit-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-ms-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-moz-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-o-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	transition: color .2s ease-in, border-left-color .2s ease-in;;
+}
+
+/* Rounded corners for the last submenu link */
+#nav ul>li:last-child>a {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+/* Changing the link color on hover */
+#nav ul li:hover>a {
+	color: #039;
+	background: #BFD6FF;
+}
+
+.nav ul ul {
+	display: none;
+}
+}
+@media screen and (max-width: 1600px) {
+	#nav, #nav ul {
+	list-style: none;
+	padding: 0;
+	
+	margin:0 auto;
+	width:100%;
+	
+	
+}
+
+#nav #toggleMenu, #nav #hideMenu {
+	display: none;
+	
+
+}
+
+/* The main navigation bar */
+#nav {
+	position: relative;
+	display: block;
+	height: 58px;
+	width: auto; /* The menu will take the width of its container */
+	/*border-radius: 5px;*/
+	background: #33F;
+	padding:-50%;
+	z-index: 50;
+	padding-left:15%;
+	padding-right:15%;
+
+}
+
+#nav>li {
+	display: block;
+	float: left;
+		position: relative;
+}
+
+/* The main navigation links */
+#nav>li>a {
+	/* Layout */
+	display: block;
+	padding: 13px 22px;
+	border-color: #b8d9ea;
+
+	/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	color: #b8d9ea;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:2.5;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+}
+
+/* The hover state of the links */
+#nav>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The arrow indicating a dropdown menu */
+.dropdown>a::after {
+	position: absolute;
+	display: block;
+	content: "";
+	height: 0;
+	width: 0;
+	border: 4px solid transparent;
+	border-top-color: inherit;
+	right: 11px;
+	top: 27px;
+}
+
+/*  The submenus */
+#nav ul {
+	display: block;
+	position: absolute;
+	top: 58px;
+	left: -9999px;
+	opacity: 0;
+	background: #429bc7;
+	cursor: pointer;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	-webkit-transition: opacity .22s ease-in;
+	-ms-transition: opacity .22s ease-in;
+	-moz-transition: opacity .22s ease-in;
+	-o-transition: opacity .22s ease-in;
+	transition: opacity .22s ease-in;
+}
+
+#nav ul li {
+	display: block;
+	position: absolute;
+	height: 0px;
+	-webkit-transition: height .15s ease-in;
+	-ms-transition: height .15s ease-in;
+	-moz-transition: height .15s ease-in;
+	-o-transition: height .15s ease-in;
+	transition: height .15s ease-in;
+}
+#nav ul>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The submenu appears when its parent is hovered */
+#nav>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+#nav ul>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav ul li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+/* The submenu links */
+#nav ul li a {
+	/* Layout */
+	display: block;
+	padding: 7px 12px 7px 22px;
+	width: 200px;
+
+	/* Typography */
+	font-family: "Open Sans", sans-serif;
+	font-size: 13px;
+	
+	
+	text-decoration: none;
+	color: #039;
+	font-weight: 400;
+	
+	
+	/* Background & effects */
+	background: #FFF;
+	-webkit-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-ms-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-moz-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-o-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	transition: color .2s ease-in, border-left-color .2s ease-in;;
+}
+
+/* Rounded corners for the last submenu link */
+#nav ul>li:last-child>a {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+/* Changing the link color on hover */
+#nav ul li:hover>a {
+	color: #039;
+	background: #BFD6FF;
+}
+
+.nav ul ul {
+	display: none;
+}
+}
+@media screen and (max-width: 1400px) {
+	#nav, #nav ul {
+	list-style: none;
+	padding: 0;
+	
+	margin:0 auto;
+	width:100%;
+	
+	
+}
+
+#nav #toggleMenu, #nav #hideMenu {
+	display: none;
+	
+
+}
+
+/* The main navigation bar */
+#nav {
+	position: relative;
+	display: block;
+	height: 58px;
+	width: auto; /* The menu will take the width of its container */
+	/*border-radius: 5px;*/
+	background: #33F;
+	padding:-50%;
+	z-index: 50;
+	padding-left:10%;
+	padding-right:10%;
+
+}
+
+#nav>li {
+	display: block;
+	float: left;
+		position: relative;
+}
+
+/* The main navigation links */
+#nav>li>a {
+	/* Layout */
+	display: block;
+	padding: 13px 22px;
+	border-color: #b8d9ea;
+
+	/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	color: #b8d9ea;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:2.5;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+}
+
+/* The hover state of the links */
+#nav>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The arrow indicating a dropdown menu */
+.dropdown>a::after {
+	position: absolute;
+	display: block;
+	content: "";
+	height: 0;
+	width: 0;
+	border: 4px solid transparent;
+	border-top-color: inherit;
+	right: 11px;
+	top: 27px;
+}
+
+/*  The submenus */
+#nav ul {
+	display: block;
+	position: absolute;
+	top: 58px;
+	left: -9999px;
+	opacity: 0;
+	background: #429bc7;
+	cursor: pointer;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	-webkit-transition: opacity .22s ease-in;
+	-ms-transition: opacity .22s ease-in;
+	-moz-transition: opacity .22s ease-in;
+	-o-transition: opacity .22s ease-in;
+	transition: opacity .22s ease-in;
+}
+
+#nav ul li {
+	display: block;
+	position: absolute;
+	height: 0px;
+	-webkit-transition: height .15s ease-in;
+	-ms-transition: height .15s ease-in;
+	-moz-transition: height .15s ease-in;
+	-o-transition: height .15s ease-in;
+	transition: height .15s ease-in;
+}
+#nav ul>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The submenu appears when its parent is hovered */
+#nav>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+#nav ul>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav ul li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+/* The submenu links */
+#nav ul li a {
+	/* Layout */
+	display: block;
+	padding: 7px 12px 7px 22px;
+	width: 200px;
+
+	/* Typography */
+	font-family: "Open Sans", sans-serif;
+	font-size: 13px;
+	
+	
+	text-decoration: none;
+	color: #039;
+	font-weight: 400;
+	
+	
+	/* Background & effects */
+	background: #FFF;
+	-webkit-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-ms-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-moz-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-o-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	transition: color .2s ease-in, border-left-color .2s ease-in;;
+}
+
+/* Rounded corners for the last submenu link */
+#nav ul>li:last-child>a {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+/* Changing the link color on hover */
+#nav ul li:hover>a {
+	color: #039;
+	background: #BFD6FF;
+}
+
+.nav ul ul {
+	display: none;
+}
+}
+@media screen and (max-width: 1280px) {
+	#nav, #nav ul {
+	list-style: none;
+	padding: 0;
+	
+	margin:0 auto;
+	width:100%;
+	
+	
+}
+
+#nav #toggleMenu, #nav #hideMenu {
+	display: none;
+	
+
+}
+
+/* The main navigation bar */
+#nav {
+	position: relative;
+	display: block;
+	height: 58px;
+	width: auto; /* The menu will take the width of its container */
+	/*border-radius: 5px;*/
+	background: #33F;
+	padding:-50%;
+	z-index: 50;
+	padding-left:10%;
+	padding-right:10%;
+
+}
+
+#nav>li {
+	display: block;
+	float: left;
+		position: relative;
+}
+
+/* The main navigation links */
+#nav>li>a {
+	/* Layout */
+	display: block;
+	padding: 13px 22px;
+	border-color: #b8d9ea;
+
+	/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	color: #b8d9ea;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:2.5;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+}
+
+/* The hover state of the links */
+#nav>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The arrow indicating a dropdown menu */
+.dropdown>a::after {
+	position: absolute;
+	display: block;
+	content: "";
+	height: 0;
+	width: 0;
+	border: 4px solid transparent;
+	border-top-color: inherit;
+	right: 11px;
+	top: 27px;
+}
+
+/*  The submenus */
+#nav ul {
+	display: block;
+	position: absolute;
+	top: 58px;
+	left: -9999px;
+	opacity: 0;
+	background: #429bc7;
+	cursor: pointer;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	-webkit-transition: opacity .22s ease-in;
+	-ms-transition: opacity .22s ease-in;
+	-moz-transition: opacity .22s ease-in;
+	-o-transition: opacity .22s ease-in;
+	transition: opacity .22s ease-in;
+}
+
+#nav ul li {
+	display: block;
+	position: absolute;
+	height: 0px;
+	-webkit-transition: height .15s ease-in;
+	-ms-transition: height .15s ease-in;
+	-moz-transition: height .15s ease-in;
+	-o-transition: height .15s ease-in;
+	transition: height .15s ease-in;
+}
+#nav ul>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The submenu appears when its parent is hovered */
+#nav>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+#nav ul>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav ul li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+/* The submenu links */
+#nav ul li a {
+	/* Layout */
+	display: block;
+	padding: 7px 12px 7px 22px;
+	width: 200px;
+
+	/* Typography */
+	font-family: "Open Sans", sans-serif;
+	font-size: 13px;
+	
+	
+	text-decoration: none;
+	color: #039;
+	font-weight: 400;
+	
+	
+	/* Background & effects */
+	background: #FFF;
+	-webkit-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-ms-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-moz-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-o-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	transition: color .2s ease-in, border-left-color .2s ease-in;;
+}
+
+/* Rounded corners for the last submenu link */
+#nav ul>li:last-child>a {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+/* Changing the link color on hover */
+#nav ul li:hover>a {
+	color: #039;
+	background: #BFD6FF;
+}
+
+.nav ul ul {
+	display: none;
+}
+}
+@media screen and (max-width: 1200px) {
+	#nav, #nav ul {
+	list-style: none;
+	padding: 0;
+	
+	margin:0 auto;
+	width:100%;
+	
+	
+}
+
+#nav #toggleMenu, #nav #hideMenu {
+	display: none;
+	
+
+}
+
+/* The main navigation bar */
+#nav {
+	position: relative;
+	display: block;
+	height: 58px;
+	width: auto; /* The menu will take the width of its container */
+	/*border-radius: 5px;*/
+	background: #33F;
+	padding:-50%;
+	z-index: 50;
+	padding-left:5%;
+	padding-right:5%;
+
+}
+
+#nav>li {
+	display: block;
+	float: left;
+		position: relative;
+}
+
+/* The main navigation links */
+#nav>li>a {
+	/* Layout */
+	display: block;
+	padding: 13px 22px;
+	border-color: #b8d9ea;
+
+	/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	color: #b8d9ea;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:2.5;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+}
+
+/* The hover state of the links */
+#nav>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The arrow indicating a dropdown menu */
+.dropdown>a::after {
+	position: absolute;
+	display: block;
+	content: "";
+	height: 0;
+	width: 0;
+	border: 4px solid transparent;
+	border-top-color: inherit;
+	right: 11px;
+	top: 27px;
+}
+
+/*  The submenus */
+#nav ul {
+	display: block;
+	position: absolute;
+	top: 58px;
+	left: -9999px;
+	opacity: 0;
+	background: #429bc7;
+	cursor: pointer;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	-webkit-transition: opacity .22s ease-in;
+	-ms-transition: opacity .22s ease-in;
+	-moz-transition: opacity .22s ease-in;
+	-o-transition: opacity .22s ease-in;
+	transition: opacity .22s ease-in;
+}
+
+#nav ul li {
+	display: block;
+	position: absolute;
+	height: 0px;
+	-webkit-transition: height .15s ease-in;
+	-ms-transition: height .15s ease-in;
+	-moz-transition: height .15s ease-in;
+	-o-transition: height .15s ease-in;
+	transition: height .15s ease-in;
+}
+#nav ul>li:hover>a {
+	color: #fff;
+	border-top-color: #fff;
+	background: #F60;
+	
+	
+}
+#nav>li.dropdown>a {
+	padding-right: 28px;
+}
+
+/* The submenu appears when its parent is hovered */
+#nav>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+#nav ul>li:hover>ul {
+	left: 0px;
+	opacity: 1;
+}
+
+#nav ul li:hover>ul>li {
+	position: relative;
+	height: 31px;
+}
+/* The submenu links */
+#nav ul li a {
+	/* Layout */
+	display: block;
+	padding: 7px 12px 7px 22px;
+	width: 200px;
+
+	/* Typography */
+	font-family: "Open Sans", sans-serif;
+	font-size: 13px;
+	
+	
+	text-decoration: none;
+	color: #039;
+	font-weight: 400;
+	
+	
+	/* Background & effects */
+	background: #FFF;
+	-webkit-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-ms-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-moz-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-o-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	transition: color .2s ease-in, border-left-color .2s ease-in;;
+}
+
+/* Rounded corners for the last submenu link */
+#nav ul>li:last-child>a {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+/* Changing the link color on hover */
+#nav ul li:hover>a {
+	color: #039;
+	background: #BFD6FF;
+}
+
+.nav ul ul {
+	display: none;
+}
+}
+@media screen and (max-width: 1024px) {
+	#nav {
+	position: relative;
+	display: block;
+	height: 53px;
+	width: auto; /* The menu will take the width of its container */
+	border-radius: 0px;
+	background: #33F;
+	z-index: 50;
+	/*margin-top:-20px;*/
+	padding-left:8%;
+	padding-right:8%;
+	
+	
+	
+
+}
+
+#nav>li {
+	display: block;
+	float: left;
+	position: relative;
+}
+	
+
+#nav>li>a {
+	/* Layout */
+	display: block;
+	padding: 13px 10px;
+	border-color: #b8d9ea;
+
+	/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	color: #b8d9ea;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:2.5;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+}
+#nav ul {
+	display: block;
+	position: absolute;
+	top: 53px;
+	
+}
+}
+@media screen and (max-width: 900px) {
+	#nav {
+	position: relative;
+	display: block;
+	height: 53px;
+	width: auto; /* The menu will take the width of its container */
+	border-radius: 0px;
+	background: #33F;
+	z-index: 50;
+	/*margin-top:-20px;*/
+	padding-left:3%;
+	padding-right:3%;
+	
+	
+	
+
+}
+
+#nav>li {
+	display: block;
+	float: left;
+	position: relative;
+}
+	
+
+#nav>li>a {
+	/* Layout */
+	display: block;
+	padding: 13px 10px;
+	border-color: #b8d9ea;
+
+	/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	color: #b8d9ea;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:2.5;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+}
+#nav ul {
+	display: block;
+	position: absolute;
+	top: 53px;
+	
+}
+}
+@media screen and (max-width: 800px) {
+	#nav {
+	position: relative;
+	display: block;
+	height: 53px;
+	width: auto; /* The menu will take the width of its container */
+	border-radius: 0px;
+	background: #33F;
+	z-index: 50;
+	/*margin-top:-20px;*/
+	padding-left:1%;
+	padding-right:1%;
+	
+	
+	
+
+}
+
+#nav>li {
+	display: block;
+	float: left;
+	position: relative;
+}
+	
+
+#nav>li>a {
+	/* Layout */
+	display: block;
+	padding: 13px 10px;
+	border-color: #b8d9ea;
+
+	/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	color: #b8d9ea;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:2.5;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+}
+#nav ul {
+	display: block;
+	position: absolute;
+	top: 53px;
+	
+}
+}
+@media screen and (max-width: 768px) {
+	
+
+	
+
+	#nav {
+		width: 100%;
+		max-width: 900px;
+		height: auto;
+		background: #33F;
+		padding:0;
+	}
+
+	#nav li {
+		float: none;
+		padding: 0 px;
+		display: none;
+		background: #FFF;
+	}
+
+	#nav>li>a {
+		padding: 8px px;
+		/* Typography */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	color: #39F;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height:1.7;
+	
+	/* Transitions */
+	-webkit-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-ms-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-moz-transition: color .2s ease-in, border-top-color .2s ease-in;
+	-o-transition: color .2s ease-in, border-top-color .2s ease-in;
+	transition: color .2s ease-in, border-top-color .2s ease-in;
+	}
+
+	.dropdown>a::after {
+		display: none;
+	}
+
+#nav ul {
+position: relative;
+		top: 0px;
+		left: 0px;
+		right: auto;
+		opacity: 1;
+		clear: both;
+	background: #FFF;
+	
+	
+}
+.dropdown>a::after {
+		display: none;
+	}
+
+#nav ul li, #nav>li:hover>ul>li {
+		height: auto;
+		position: relative;
+	
+
+	}
+#nav ul li {
+	padding: 0 px;
+	
+	
+}
+	
+/* The submenu links */
+#nav ul li a {
+	/* Layout */
+	
+	padding: 7px 12px 7px 22px;
+	width: auto;
+
+	
+	
+	
+
+	/* Typography */
+	font-family: "Open Sans", sans-serif;
+	font-size: 13px;
+	
+	
+	text-decoration: none;
+	color: #039;
+	font-weight: 400;
+	
+	
+	/* Background & effects */
+	background: #FFF;
+	-webkit-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-ms-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-moz-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	-o-transition: color .2s ease-in, border-left-color .2s ease-in;;
+	transition: color .2s ease-in, border-left-color .2s ease-in;;
+}
+
+	
+	#nav #toggleMenu {
+		display: block;
+	}
+	
+
+	#nav #toggleMenu>a, #nav #hideMenu>a {
+		padding: 13px 10px;
+		z-index: 999;
+	}
+	
+
+	#nav:target li {
+		display: block;
+	}
+
+	#nav:target #toggleMenu {
+		display: none;
+	}
+	
+
+	#nav:target #hideMenu {
+		display: block;
+		background: rgba(0, 0, 0, .13);
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+	}
+	#nav:target #hideMenu {
+		display: block;
+		background: rgba(0, 0, 0, .13);
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+	}
+
+	#nav #hideMenu>a {
+		color: #fff;
+	}
+
+	#toggleMenu>a::after, #hideMenu>a::after {
+		position: absolute;
+		content: "";
+		right: 20px;
+		top: 16px;
+		height: 3px;
+		width: 20px;
+		border-top: 2px solid #b8d9ea;
+		border-bottom: 2px solid #b8d9ea;
+		z-index: 1;
+	}
+
+	#toggleMenu>a::before, #hideMenu>a::before {
+		position: absolute;
+		content: "";
+		right: 20px;
+		top: 23px;
+		height: 3px;
+		width: 20px;
+		border-bottom: 2px solid #b8d9ea;
+		z-index: 1;
+	}
+
+	#hideMenu>a::after, #hideMenu>a::before {
+		border-color: #fff;
+	}
+
+}

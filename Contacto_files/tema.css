@@ -1,0 +1,295 @@
+/* CSS Document */
+
+ol li {
+	border:none !important;
+	list-style:inside decimal !important
+}
+
+/*POSICIONES*/
+
+.Tema{ width:749px; background-color:#FFFFFF; }
+.TPos3{ margin-top:4px;}
+.TPos4, .TPos5, .TPos6, .TPos7, .TPos8, .TPos9, .TPos10{ min-height:40px; padding-bottom:6px }
+.TPos4{ width:368px; clear:left; float:left; margin-right:5px;}
+.TPos5{ width:368px; clear:right; float:left; }
+.TPos6 { clear:left; margin:4px; }
+.TPos10{ padding-top:1px}
+.TPos7, .TPos8 { width:236px; float:left; margin-right:5px; }
+.TPos8 { width:500px; margin:0 }
+.TPos9, .TPos10 { width:500px; float:left; margin-right:5px; }
+.TPos10 { width:236px; margin:0 }
+.TPosLine{ margin:5px 0; clear:left }
+.TPos6 p{ padding:4px 10px 5px 12px}
+
+.T1Pos{
+	border:1px solid #f00;
+	margin:5px 0;
+}
+/*TITULOS LARGOS*/
+
+.T1Tit{ 
+	background:url(../img/secciones/estilo1BgTit.gif) no-repeat right; 
+	height:42px; margin:0 4px; 
+	color:#dc6f03;
+	padding:1px 0 2px 0 
+}
+.T1Tit p{ 
+	padding:12px 0 0 15px;
+	height:28px;
+	border-left:#ea9707 solid 5px;
+	font-weight:bold;
+	font-size:15px;
+	text-transform:uppercase
+}
+
+/*TITULOS PARA CUADROS*/
+
+.T1SubTit{ 
+	font-weight:bold;
+	font-size:12px;
+	background:url(../img/secciones/estilo1Tit.gif) no-repeat right;
+	height:20px;
+	color:#dc6f03;
+	margin-bottom:-1px;
+	margin-left:6px;
+	padding:10px 25px 0 15px;
+	border-left:#ea9707 solid 5px;
+	float:left;
+}
+.T2SubTit{ 
+	font-weight:bold;
+	font-size:22px;
+	color:#dc6f03;
+	padding:20px 25px;
+}
+.T3SubTit{ 
+	font-weight:bold;
+	font-size:12px;
+	clear:left;
+	background:url(../img/secciones/estilo3BgTit.gif) no-repeat top right;
+	color:#dc6f03;
+	margin-bottom:-1px;
+	padding:10px 25px 0 15px;
+	min-height:25px;
+	border-left:#ea9707 solid 5px;
+	position:relative;
+	margin-left:6px;
+}
+.T4SubTit{ 
+	font-weight:bold;
+	font-size:12px;
+	background:url(../img/secciones/estilo4BgTit.gif) repeat-x;
+	height:32px;
+	color:#fff;
+	margin-bottom:-3px;
+	padding:13px 25px 0 15px;
+}
+.T5SubTit{ 
+	font-weight:bold;
+	font-size:16px;
+	border:#CCCCCC solid 1px;
+	border-bottom:none;
+	padding:12px 0 0 15px;
+	margin:0 1px 0 9px
+}
+
+/*CUADROS*/
+
+.T1Text{ 
+	background:url(../img/secciones/estilo1BgCuadro.jpg) no-repeat bottom right;
+	clear:left;
+	border-top:#EEEEEE solid 1px;
+	margin-bottom:5px;
+	margin-top:-1px;
+	padding-bottom:2px;
+	margin-left:6px;
+}
+.T1Text p, .T1TextDiv{ 
+	padding:10px 15px;
+	border-left:#ea9707 solid 5px;
+}
+.T1Text ul, .T1Text ol{ 
+	padding:10px 15px;
+	border-left:#ea9707 solid 5px;
+	list-style:inside;
+}
+.T1Text li, .T2Text li, .T3Text li, .T1SolObjTex li, .T1ImgyTexDivCont li, .T1ImgyTexDivCuerpo li, .T1ImgyText2 li, .T1ImgyText1 li, .T1ImgyText3 li{
+	 list-style-type:none;
+	 margin:4px 0 4px 5px;
+	 border-left:#ea9707 solid 4px;
+	 padding:0 0 0 4px;
+}
+
+.T2Text{ 
+	clear:left;
+	margin-bottom:5px;
+	padding-bottom:2px
+}
+.T2Text p{ 
+	padding:10px 25px;
+}
+.T2Text ul, .T2Text ol{ 
+	padding:10px 25px;
+	list-style:inside;
+}
+
+.T3Text{ 
+	clear:left;
+	margin-bottom:5px;
+	padding-bottom:2px;
+	border:#999999 solid 1px;
+	background:url(../img/secciones/estilo3BgCuadro.gif) bottom repeat-x;
+}
+.T3Text p{ 
+	padding:10px 15px;
+}
+.T3Text ul{ 
+	padding:10px 15px;
+	list-style:inside;
+}
+
+.T4Text{ 
+	clear:left;
+	padding:5px;
+	border:#CCCCCC solid 1px;
+	border-top:none;
+	margin:0 1px 5px 9px
+}
+.T4Text p{ 
+	padding:10px 15px;
+}
+.T4Text ul{ 
+	padding:10px 15px;
+	list-style:inside;
+}
+
+
+
+
+/* TEXTO  E IMAGEN */
+
+.T1ImgyText1 { 
+	background:#a5a5a5; border:#8e8e8e solid 1px; padding: 5px; color:#FFFFFF
+}
+.T1ImgyText1 .T1ImgyTexDivImg, .T1ImgyText3 { 
+	float:right !important
+}
+.T1ImgyText1 p, .T1ImgyText2 p, .T1ImgyText3 p{ 
+	padding:8px 15px 8px 15px;
+}
+
+.T1ImgyText2 { 
+	background:url(../img/secciones/estilo1BgCuadro.jpg) no-repeat bottom right;
+	clear:left;
+	border-top:#EEEEEE solid 1px;
+	margin-bottom:5px;
+	padding-bottom:2px;
+}
+
+.T1ImgyText3 { 
+	clear:left;
+	margin-bottom:5px;
+	padding-bottom:2px;
+}
+.T1ImgyText1 ul, .T1ImgyText2 ul, .T1ImgyText3 ul{ 
+	padding:5px 15px;
+	list-style:inside;
+}
+.T1ImgyTexDivCuerpo li, .T1ImgyText2 li, .T1ImgyText1 li, .T1ImgyText3 li{ 
+	list-style:none;
+	margin:4px 0 4px 5px;
+	border-left:#ea9707 solid 4px;
+	padding:0 0 0 4px;
+}
+
+.T1ImgyTexDivCuerpo ul{ float:left; margin-left:5px; }
+.T1ImgyTexDivContSol{ padding:0 4px; margin-top:2px; }
+.T1ImgDivCont{ text-align:center; margin:13px 0 0 0;  }
+.T1ImgyTexDivImg{ float:left; padding-top:2px;}
+.T1ImgyTexDivImg img{ margin:4px 8px 4px 8px; float:left; }
+
+.T1ImgyTexDivImgCh{ float:left; padding-top:2px;}
+.T1ImgyTexDivImgCh img{ float:left; margin-left:10px;}
+.T1ImgyTexDivPrev{ display:inline; }
+.T1ImgyTexDivCuerpo{ margin-left:5px; display:inline;}
+
+/*SOLAPAS*/
+
+.T1SolCont{ padding:0 2px; margin:0 5px 2px 5px; min-height:50px; clear:left }
+.T1SolTitCont{ margin-top:7px; height:30px;  }
+.T1SolTitCont div{ float:left;  }
+.T1SolTitCont img{ float:left; border:none }
+.T1SolTitOff { 
+	float:left; 
+	margin-top:4px;
+	background:url(../img/secciones/solTitOff.gif) no-repeat top right; 
+	height:24px;  
+	color:#b26111;  
+	font-weight:bold; 
+	text-decoration:none !important;
+	outline: 0;
+	margin-right:1px
+}
+.T1SolTitOff span { padding:4px 7px 0 10px; height:20px; float:left; margin-right:3px; background:url(../img/secciones/solTitOff.gif) no-repeat top left;}
+
+.T1SolTitOff:hover{ background:url(../img/secciones/solTitOffOver.gif) no-repeat top right;  color:#2e8b2e; text-decoration:none !important; }
+.T1SolTitOff:hover span{ background:url(../img/secciones/solTitOffOver.gif) no-repeat top left !important; }
+.T1SolTitOn { 
+	float:left;
+	margin-top:1px; cursor:default; 
+	background:url(../img/secciones/solTitOn.gif) no-repeat top right; 
+	height:30px;
+	color:#dc6f03;	
+	text-decoration:none !important;
+	outline: 0
+}
+.T1SolTitOn span{ 
+	background:url(../img/secciones/solTitOn.gif) no-repeat top left; 
+	padding:7px 6px 0 10px;
+	height:23px;
+	margin-right:7px;
+	float:left;
+	font-weight:bold;
+}
+.T1SolTitOn img{ 
+	display:none
+}
+
+.T1SolContCont{ padding:5px 10px; min-height:50px; display:none; border:#d3d3d3 solid 1px; }
+
+.T1SolObjTit{ padding:4px; background-color:#FFFFFF; border:1px solid #999999; }
+.T1SolObjTex{ padding:4px; }
+
+.T1Code{ }
+
+.GrillaDivCom{ font-size:11px; margin:2px 25px; color: #003300;}
+.GrillaSpanCom, .GrillaDivCom span{ color: #003300; font-size:8px; vertical-align:top; }
+
+
+/*GRILLA
+
+.T1GriDivCont{ margin:4px 0; }
+.Grilla{ border-collapse:collapse; table-layout:fixed; border:1px solid #666; margin:0 auto; background-color:#fff; }
+.Grilla th, .Grilla td{ border:1px solid #666; padding:2px; }
+.GrillaTrCol{ font-size:12px; font-weight:bold; color:#000; background-color:#D5D5D5; }
+.GrillaTrTit{ background-color:#666; color:#fff; }
+.GrillaSpanCom, .GrillaDivCom span{ color: #FF0000; font-size:8px; vertical-align:top; }
+.GrillaDivCom{ font-size:11px; margin:2px 7px; }
+.GrillaTdRowDes, .GrillaEnc{ background-color:#D5D5D5; font-weight:bold; }
+.GrillaTrRow{}
+.GrillaTrRowImp{ background-color:#FFF2EC !important; }
+.GrillaEncNormal{ background-color:#FFFFFF; font-weight:normal; text-align:left; }
+.GrillaEncTit{ background-color:#666 !important; font-weight:bold !important; color:#fff !important; }
+
+.GrillaLOGin{ border-collapse:collapse; table-layout:fixed; border:1px solid #174CB2; margin:0 auto; background-color:#fff; }
+.GrillaLOGin th, .GrillaLOGin td{ border:1px solid #174CB2; padding:2px; }
+.GrillaLOGinTrCol{ font-size:12px; font-weight:bold; color:#000; background-color:#A4BFF2; }
+.GrillaLOGinTrTit{ background-color:#174CB2; color:#fff; }
+.GrillaLOGinSpanCom, .GrillaLOGinDivCom span{ color: #FF0000; font-size:8px; vertical-align:top; }
+.GrillaLOGinDivCom{ font-size:11px; margin:2px 7px; }
+.GrillaLOGinTdRowDes, .GrillaLOGinEnc{ background-color:#A4BFF2; font-weight:bold; }
+.GrillaLOGinTrRow{}
+.GrillaLOGinTrRowImp{ background-color:#FFF2EC !important; }
+.GrillaLOGinEncNormal{ background-color:#FFFFFF; font-weight:normal; text-align:left; }
+.GrillaLOGinEncTit{ background-color:#174CB2 !important; font-weight:bold !important; color:#fff !important; }
+*/

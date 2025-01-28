@@ -1,0 +1,67 @@
+.seccionLat {
+	float:left;
+	width:415px;
+}
+.seccionCont {
+	float:left;
+	width:549px;
+}
+.seccionLine {
+	background-color:#e77e15
+}
+.seccionTitle {
+	background-color:#784700
+}
+.seccionLat p {
+	text-align:right;
+	padding:45px;
+	color:#FFFFFF
+}
+.seccionLat a {
+	color:#FFFFFF
+}
+.btnComun, .btnMasInfo {
+	background: url(../img/bgBtn.gif) repeat-x;
+	margin-left:8px;
+	border:solid 1px #ba6007;
+	color:#ffe8b8;
+}
+.btnComun:hover span, .btnMasInfo:hover span {
+	color:#fff;
+}
+fieldset {
+	padding:10px 8px;
+	border:solid 1px #b5a477;
+	width:470px;
+	float:right;
+	text-align:center;
+	margin:0 15px 12px 0
+}
+legend {
+	padding:5px;
+	color: #999999;
+	font-weight:bold
+}
+fieldset p{
+	text-align:right;
+	margin-bottom:4px;
+	padding-right:8px;
+	color:#fff;
+}
+fieldset input{
+	margin-left:5px;
+	width:300px
+}
+fieldset textarea{
+	width:440px;
+}
+fieldset label {
+	padding:3px;
+	color:#000033;
+}
+
+fieldset select {
+	padding:3px;
+	color:#000033;
+	width: 310px;
+}

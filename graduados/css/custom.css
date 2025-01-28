@@ -1,0 +1,39 @@
+/* Add here all your CSS customizations */
+
+.custom-position-1 {
+	position: relative;
+	margin-top: -12%;
+	z-index: 1000;
+}
+
+div.card {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.slider-container {
+	background: white;
+}
+
+.tp-caption.large_bg_black,.large_bg_black
+{
+	/*background-color:rgb(0, 136, 204) !important;*/
+	background-color: #0099e6 !important;
+	border-color:#ffd658;
+	border-style:none;
+	border-width:0;
+	color:#fff;
+	font-family:"Open Sans";
+	font-size:60px;
+	font-weight:800;
+	line-height:80px;
+	padding:10px 20px 15px;
+	text-decoration:none;
+}
+
+th {
+	background: #0099e6;
+	color: white;
+	text-transform: uppercase;
+}

@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+/* start - css table */
+.colorestabla {
+	border-collapse: collapse;
+	margin: 10px 10px;
+	border-bottom-width:thin;
+}
+.colorestabla th {
+	color: #555;
+	background: #FFF;
+	height: 38px;
+	padding-left: 12px;
+	padding-right: 12px;
+	text-align: left;	
+	border-width: 1px;
+  	border-style: solid;
+  	border-color: #000;	
+	/*font-width:bold;*/
+	
+}
+.colorestabla tr {
+	height: 40px;	
+	border: #660 1px solid;
+		
+	
+	
+}
+.colorestabla td {
+	padding-left: 11px;
+	padding-right: 11px;
+	border: 1px solid #000;
+
+	text-align: left;
+	color: #000;
+	
+}	
+
+.colorestabla .tr_hover  {
+background-color:#60c424;
+border: #660 1px solid;
+
+}/*coleretabla .tr_hover*/
+
+
+
+
